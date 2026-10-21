@@ -58,7 +58,10 @@
                 <h3>Backend</h3>
                 <div class="tags">
                     <span>Django</span>
-                    <!-- Add when you build with them: Django REST Framework, REST APIs, Authentication -->
+                    <span>Django REST Framework</span>
+                    <span>REST APIs</span>
+                    <span>JWT Authentication</span>
+                    <span>Role-Based Access Control</span>
                 </div>
             </div>
             <div class="card">
@@ -68,14 +71,12 @@
                     <span>CSS3</span>
                     <span>Flexbox / Grid</span>
                     <span>Responsive Design</span>
-                    <!-- Add after your first project: React -->
                 </div>
             </div>
             <div class="card">
                 <h3>Databases</h3>
                 <div class="tags">
                     <span>SQLite</span>
-                    <!-- Add when used: MySQL, PostgreSQL -->
                 </div>
             </div>
             <div class="card">
@@ -84,7 +85,8 @@
                     <span>Git</span>
                     <span>GitHub</span>
                     <span>VS Code</span>
-                    <!-- Add when used: Postman -->
+                    <span>Swagger / OpenAPI</span>
+                    <span>Docker</span>
                 </div>
             </div>
             <div class="card">
@@ -92,6 +94,8 @@
                 <div class="tags">
                     <span>OOP</span>
                     <span>Data Structures</span>
+                    <span>Unit Testing</span>
+                    <span>ACID Transactions</span>
                 </div>
             </div>
         </div>
@@ -102,20 +106,33 @@
         <div class="projects-grid">
 
             <article class="project">
-                <h3>Portfolio Website</h3>
-                <p>Responsive developer portfolio built with semantic HTML, CSS Grid and Flexbox, deployed on GitHub Pages.</p>
+                <h3>ShopFlow API</h3>
+                <p>Multi-vendor e-commerce backend with JWT auth, role-based access (Admin, Vendor, Customer) and concurrency-safe checkout using atomic transactions and row locking.</p>
                 <div class="tags">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>GitHub Pages</span>
+                    <span>Django</span>
+                    <span>DRF</span>
+                    <span>JWT</span>
+                    <span>Swagger</span>
+                    <span>Docker</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/mohanrajtunes/portfolio">Code</a>
-                    <a href="https://mohanrajtunes.github.io/portfolio/">Live Demo</a>
+                    <a href="https://github.com/mohanrajtunes/shopflow-backend">Code</a>
                 </div>
             </article>
 
-            <!-- Copy the <article> block above for each new project you finish -->
+            <article class="project">
+                <h3>PaySplit API</h3>
+                <p>Expense-sharing backend with equal, exact and percentage splits, balance aggregation, debt settlement and group-based permissions. Covered by automated tests.</p>
+                <div class="tags">
+                    <span>Django</span>
+                    <span>DRF</span>
+                    <span>JWT</span>
+                    <span>Swagger</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/mohanrajtunes/paysplit-backend">Code</a>
+                </div>
+            </article>
 
         </div>
     </section>
@@ -132,6 +149,7 @@
     <footer class="footer">
         <p>&copy; 2026 Mohanraj S</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

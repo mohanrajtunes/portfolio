@@ -6,6 +6,14 @@
     --accent: #a78bfa;
 }
 
+body.light {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #7c3aed;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +43,11 @@ body {
     color: var(--accent);
 }
 
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
 .navbar nav a {
     color: var(--text);
     text-decoration: none;
@@ -43,6 +56,22 @@ body {
 
 .navbar nav a:hover {
     color: var(--accent);
+}
+
+.theme-btn {
+    margin-left: 24px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.theme-btn:hover {
+    background-color: var(--accent);
+    color: var(--bg);
 }
 
 /* HERO */
@@ -171,6 +200,8 @@ body {
 }
 
 .project {
+    display: flex;
+    flex-direction: column;
     background-color: var(--card);
     padding: 28px;
     border-radius: 12px;
@@ -192,7 +223,8 @@ body {
 }
 
 .project-links {
-    margin-top: 18px;
+    margin-top: auto;
+    padding-top: 18px;
 }
 
 .project-links a {
@@ -225,8 +257,17 @@ body {
         gap: 12px;
     }
 
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .navbar nav a {
         margin: 0 10px;
+    }
+
+    .theme-btn {
+        margin-left: 10px;
     }
 
     .hero h1 {
@@ -236,26 +277,4 @@ body {
     .section {
         padding: 60px 6%;
     }
-}
-.theme-btn {
-    margin-left: 24px;
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--accent);
-    padding: 6px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.theme-btn:hover {
-    background-color: var(--accent);
-    color: var(--bg);
-}
-
-body.light {
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #0f172a;
-    --muted: #475569;
-    --accent: #7c3aed;
 }
