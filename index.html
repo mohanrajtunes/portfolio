@@ -4,224 +4,257 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohanraj S | Full Stack Developer</title>
-  <meta name="description" content="Mohanraj S is a full stack developer working with Django REST Framework and React. Follow one request through the stack and try the demos.">
+  <meta name="description" content="Mohanraj S is a full stack developer in Puducherry, India, building with Django REST Framework, PostgreSQL and React. Two products live in production: ShopFlow and PingBoard.">
   <meta property="og:title" content="Mohanraj S | Full Stack Developer">
-  <meta property="og:description" content="Django REST Framework and React projects, including a live multi-vendor store.">
+  <meta property="og:description" content="Django REST Framework, PostgreSQL and React. ShopFlow, a multi-vendor store, and PingBoard, an uptime monitor, both live.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#FAF8F3">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FF5A1F'/%3E%3Ctext x='32' y='43' font-size='28' font-family='Arial' font-weight='700' text-anchor='middle' fill='%230E0E0E'%3EMS%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230B0B0C'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-style='italic' text-anchor='middle' fill='%23C8A96A'%3EM%3C/text%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('ms-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+      document.documentElement.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion');
+        setTimeout(function () { if (!window.__msReady) document.documentElement.classList.remove('motion'); }, 4000);
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Syne:wght@400..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('js');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip" href="#work">Skip to work</a>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursor-label"></span></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <a class="logo" href="#top" data-cursor="Top" aria-label="Back to top">MS</a>
-
-  <header class="topbar">
-    <p class="chip mono" id="req" aria-hidden="true"><i></i><span id="req-text">GET /mohanraj</span></p>
-    <button class="chip mono" id="kbtn" type="button" data-cursor="Open" aria-haspopup="dialog">Jump to <kbd>Ctrl K</kbd></button>
+  <header class="nav" id="nav">
+    <div class="nav-in glass">
+      <a class="brand" href="#top" aria-label="Mohanraj S, back to top">Mohanraj<span> S</span></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-act">
+        <button class="kbtn" id="kbtn" type="button" aria-haspopup="dialog" aria-label="Open the jump menu">Jump <kbd>Ctrl K</kbd></button>
+        <button class="mode" id="mode" type="button" aria-label="Switch to light mode">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.4 8.4 0 1 0 10.8 10.8Z"/></svg>
+        </button>
+        <a class="btn small solid resume-link mag" href="resume.pdf" download>Resume</a>
+      </div>
+    </div>
   </header>
 
-  <div class="page">
-    <aside class="rail" id="rail" aria-hidden="true">
-      <svg id="wire" xmlns="http://www.w3.org/2000/svg">
-        <line class="w-base" id="w-base"/>
-        <line class="w-done" id="w-done"/>
-        <g id="w-nodes"></g>
-        <g id="packet"><circle class="pk-ring" r="10"/><circle class="pk" r="8"/></g>
-      </svg>
-    </aside>
+  <main id="top">
 
-    <main class="stage" id="top">
-
-      <!-- 01 CLIENT -->
-      <section class="hero" data-st="Client" data-req="GET /mohanraj">
-        <p class="st mono"><b>01</b> Client / the browser</p>
-        <h1 class="sr">Mohanraj S</h1>
-        <div class="cv-wrap"><canvas id="hero-cv" aria-hidden="true"></canvas></div>
-        <p class="role"><em>Full stack</em> developer.</p>
-
-        <div class="hero-grid">
-          <div class="term" id="term" aria-label="Terminal showing a request to this site">
-            <div class="term-bar"><i></i><i></i><i></i><span class="mono">terminal</span></div>
-            <pre id="term-body" data-lines="$ curl -i https://mohanrajtunes.github.io/portfolio/|HTTP/2 200|content-type: text/portfolio|x-role: full stack developer|x-stack: django, drf, postgresql, react|x-status: open to work"></pre>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="name" id="hero-title"><span class="ln"><span class="nw">Mohanraj</span></span> <span class="ln"><span class="nw">S<i>.</i></span></span></h1>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="lead rv">Full stack developer. I build Django REST APIs, model data in PostgreSQL and design React interfaces, then ship them to production and keep them up.</p>
+          <div class="hero-actions rv">
+            <a class="btn solid mag" href="#work">See the work</a>
+            <a class="btn line mag resume-link" href="resume.pdf" download>Download resume</a>
           </div>
-          <div class="hero-side">
-            <p class="blurb">I build APIs with Django REST Framework, store data in PostgreSQL, and build interfaces in React.</p>
-            <div class="cta">
-              <a class="btn solid" href="#work" data-cursor="Go">See my work</a>
-              <a class="btn ghost" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="Open">Open ShopFlow live</a>
-            </div>
-            <p class="hint mono">Move your cursor over my name</p>
-          </div>
+          <p class="hero-place rv"><span class="dot on"></span>Open to work · Puducherry, India · <span id="localtime">India time</span></p>
         </div>
-      </section>
 
-      <div class="ticker" aria-hidden="true">
-        <div class="track"><div class="set">
-          <span class="c2">200 OK</span><span class="c2">201 Created</span><span class="c4">400 Bad Request</span><span class="c4">401 Unauthorized</span><span class="c4">403 Forbidden</span><span class="c4">404 Not Found</span><span class="c4">409 Conflict</span><span class="c5">500 Server Error</span>
-        </div></div>
+        <aside class="status glass rv" id="status" aria-label="Live status of my projects" data-ui>
+          <div class="status-head">
+            <p class="status-title"><span class="pulse"></span>Live right now</p>
+            <p class="status-src">Watched by PingBoard</p>
+          </div>
+          <ul class="status-list" id="status-list">
+            <li data-name="ShopFlow"><span class="s-dot"></span><b>ShopFlow</b><span class="s-state">Checking</span><span class="s-up">…</span></li>
+            <li data-name="PingBoard"><span class="s-dot"></span><b>PingBoard</b><span class="s-state">Checking</span><span class="s-up">…</span></li>
+          </ul>
+          <p class="status-foot" id="status-foot">Asking the monitor. The free server can take a moment to wake up.</p>
+        </aside>
       </div>
+    </section>
 
-      <!-- 02 AUTH -->
-      <section class="auth" id="about" data-st="Auth" data-req="POST /api/token/">
-        <p class="st mono"><b>02</b> Auth / who is asking</p>
-        <div class="auth-grid">
-          <div>
-            <h2 class="h2">Who's <em>asking?</em></h2>
-            <p class="statement">I'm a B.Tech Computer Science graduate who builds web applications with Python and Django on the server and React in the browser. I care about getting the hard parts right: permissions, stock and money.</p>
+    <!-- WORK -->
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="gallery" id="gallery">
+        <div class="track" id="track">
+
+          <div class="panel panel-intro">
+            <h2 class="h2 split" id="work-title">Two products, both live.</h2>
+            <p class="intro-copy">Both are full stack: a Django REST API, a PostgreSQL database and a React front end, deployed on free cloud tiers and used for real. Try the demo beside each one.</p>
+            <p class="intro-hint" aria-hidden="true">Keep scrolling <span>→</span></p>
           </div>
-          <div class="jwt" id="jwt">
-            <p class="jwt-head mono"><span class="t1">eyJhbGciOi</span>.<span class="t2">eyJuYW1lIjoi</span>.<span class="t3">SflKxwRJSM</span></p>
-            <pre class="json"><span class="jl">{</span>
-<span class="jl">  <b>"name"</b>: "Mohanraj S",</span>
-<span class="jl">  <b>"role"</b>: "full stack developer",</span>
-<span class="jl">  <b>"education"</b>: "B.Tech, Computer Science",</span>
-<span class="jl">  <b>"location"</b>: "Puducherry, India",</span>
-<span class="jl">  <b>"works_with"</b>: ["Django", "DRF", "React"],</span>
-<span class="jl">  <b>"open_to_work"</b>: <u>true</u></span>
-<span class="jl">}</span></pre>
-            <p class="fine mono">Decoded for humans. The real tokens in ShopFlow carry the user's role.</p>
-          </div>
-        </div>
-      </section>
 
-      <!-- 03 API / WORK -->
-      <section class="work" id="work" data-st="API" data-req="POST /api/checkout/">
-        <p class="st mono"><b>03</b> API / the work</p>
-        <h2 class="h2">What I've <em>built</em></h2>
-
-        <article class="card shop" id="shopflow">
-          <div class="card-main">
-            <p class="meth mono"><b>POST</b> /api/checkout/ <i>Full stack / Live</i></p>
-            <h3 class="p-title">ShopFlow</h3>
-            <p class="p-lead">A multi-vendor store where the last item can only be sold once.</p>
-            <ul class="points">
-              <li>Checkout is one database transaction that locks each product row.</li>
-              <li>Vendors can edit only their own products. The API enforces it, not just the UI.</li>
-              <li>JWT login with refresh tokens. The user's role travels in the token.</li>
-              <li>Vendors upload product photos to Cloudinary.</li>
-            </ul>
-            <p class="stackline mono">React on Vercel / Django on Render / PostgreSQL on Neon</p>
-            <div class="links">
-              <a class="btn solid" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="Open">Open live app</a>
-              <a class="btn ghost" href="https://github.com/mohanrajtunes/Shopflow-frontend" target="_blank" rel="noopener noreferrer" data-cursor="Code">Frontend</a>
-              <a class="btn ghost" href="https://github.com/mohanrajtunes/shopflow-backend" target="_blank" rel="noopener noreferrer" data-cursor="Code">Backend</a>
+          <!-- ShopFlow -->
+          <article class="panel project" id="shopflow" aria-labelledby="sf-title">
+            <div class="p-info">
+              <h3 class="p-title" id="sf-title">ShopFlow</h3>
+              <p class="p-lead">A live multi-vendor store where the last item can only be sold once.</p>
+              <ul class="p-points">
+                <li>Checkout is one database transaction that locks each product row.</li>
+                <li>Vendors can edit only their own products. The API enforces it, not just the UI.</li>
+                <li>JWT login with refresh tokens; the user's role travels in the token.</li>
+                <li>Vendors upload product photos to Cloudinary.</li>
+              </ul>
+              <p class="p-stack">React on Vercel · Django on Render · PostgreSQL on Neon</p>
+              <div class="p-links">
+                <a class="btn solid mag" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener noreferrer">Open live app</a>
+                <a class="btn line" href="https://github.com/mohanrajtunes/Shopflow-frontend" target="_blank" rel="noopener noreferrer">Frontend code</a>
+                <a class="btn line" href="https://github.com/mohanrajtunes/shopflow-backend" target="_blank" rel="noopener noreferrer">Backend code</a>
+              </div>
             </div>
-          </div>
 
-          <div class="demo" id="sim">
-            <div class="demo-head">
-              <span class="mono">Try it: two buyers, one item</span>
-              <label class="switch" data-cursor="Toggle">
-                <input type="checkbox" id="lock" checked>
-                <span class="sw" aria-hidden="true"></span>
-                <span class="mono" id="lock-lbl">Row lock on</span>
-              </label>
+            <button class="btn line demo-open" type="button" aria-controls="sim" aria-expanded="false">Try the checkout demo</button>
+            <div class="demo glass" id="sim" data-ui>
+              <div class="demo-bar"><i></i><i></i><i></i><span>POST /api/checkout/</span></div>
+              <div class="demo-body">
+                <div class="demo-head">
+                  <p class="demo-q">Two buyers, one item left</p>
+                  <label class="switch">
+                    <input type="checkbox" id="lock" checked>
+                    <span class="sw" aria-hidden="true"></span>
+                    <span id="lock-lbl">Row lock on</span>
+                  </label>
+                </div>
+                <div class="sim-stage">
+                  <div class="buyer" id="buyer-a"><b>Buyer A</b><span id="a-res">waiting</span></div>
+                  <div class="stock"><span>In stock</span><b id="stock">1</b></div>
+                  <div class="buyer" id="buyer-b"><b>Buyer B</b><span id="b-res">waiting</span></div>
+                </div>
+                <button class="btn solid wide" id="fire" type="button">Both press Buy at the same moment</button>
+                <p class="note" id="sim-note"></p>
+                <p class="fine">A simulation. The real checkout uses select_for_update() inside transaction.atomic().</p>
+              </div>
             </div>
-            <div class="stage-sim">
-              <div class="buyer" id="buyer-a"><b>Buyer A</b><span id="a-res">waiting</span></div>
-              <div class="stock"><span class="mono">In stock</span><b id="stock">1</b></div>
-              <div class="buyer" id="buyer-b"><b>Buyer B</b><span id="b-res">waiting</span></div>
+          </article>
+
+          <!-- PingBoard -->
+          <article class="panel project" id="pingboard" aria-labelledby="pb-title">
+            <div class="p-info">
+              <h3 class="p-title" id="pb-title">PingBoard</h3>
+              <p class="p-lead">A live uptime monitor that checks your sites every minute and emails you when one goes down.</p>
+              <ul class="p-points">
+                <li>A scheduler calls a secret-protected tick endpoint every minute; each due monitor gets a real HTTP check.</li>
+                <li>Two failures in a row open an incident, so one network blip never sends a false alarm.</li>
+                <li>Alerts go out through Brevo's HTTPS API, because the free host blocks SMTP ports.</li>
+                <li>It is watching ShopFlow and itself right now. That's the status card at the top of this page.</li>
+              </ul>
+              <p class="p-stack">React on Vercel · Django on Render · PostgreSQL on Neon · cron-job.org</p>
+              <div class="p-links">
+                <a class="btn solid mag" href="https://pingboard-frontend.vercel.app" target="_blank" rel="noopener noreferrer">Open live app</a>
+                <a class="btn line" href="https://github.com/mohanrajtunes/Pingboard-frontend" target="_blank" rel="noopener noreferrer">Frontend code</a>
+                <a class="btn line" href="https://github.com/mohanrajtunes/Pingboard-backend" target="_blank" rel="noopener noreferrer">Backend code</a>
+              </div>
             </div>
-            <button class="btn solid" id="fire" type="button" data-cursor="Fire">Both press Buy at the same moment</button>
-            <p class="note" id="sim-note"></p>
-            <p class="fine mono">A simulation of the behaviour. The real checkout uses select_for_update() inside transaction.atomic().</p>
+
+            <button class="btn line demo-open" type="button" aria-controls="mon" aria-expanded="false">Try the monitor demo</button>
+            <div class="demo glass" id="mon" data-ui>
+              <div class="demo-bar"><i></i><i></i><i></i><span>POST /api/internal/tick/</span></div>
+              <div class="demo-body">
+                <div class="demo-head">
+                  <p class="demo-q">Take the site down</p>
+                  <label class="switch">
+                    <input type="checkbox" id="site-up" checked>
+                    <span class="sw" aria-hidden="true"></span>
+                    <span id="site-lbl">Site up</span>
+                  </label>
+                </div>
+                <div class="mon-top"><span>example.com</span><span class="pill up" id="mon-pill">Up</span></div>
+                <div class="beats" id="beats" aria-hidden="true"></div>
+                <ol class="log" id="mon-log" aria-live="polite"></ol>
+                <button class="btn solid wide" id="tick" type="button">Run the next check</button>
+                <p class="note" id="mon-note"></p>
+                <p class="fine">A simulation. The real checker stores every check in PostgreSQL and opens incidents on the server.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK: a literal stack of layers -->
+    <section class="stack" id="stack" aria-labelledby="stack-title">
+      <div class="stack-pin" id="stack-pin">
+        <div class="stack-copy">
+          <h2 class="h2 split" id="stack-title">The stack.</h2>
+          <p class="stack-sub">Four layers, one request. Every project on this page runs through all of them.</p>
+          <ol class="layers">
+            <li class="lay on" data-i="0"><h3>Browser</h3><p>JavaScript, React, React Router, Axios, Vite, GSAP, HTML and CSS</p></li>
+            <li class="lay" data-i="1"><h3>Server</h3><p>Python, Django, Django REST Framework, SimpleJWT, Celery, django-filter, drf-spectacular, pytest</p></li>
+            <li class="lay" data-i="2"><h3>Data</h3><p>PostgreSQL, SQL, SQLite</p></li>
+            <li class="lay" data-i="3"><h3>Delivery</h3><p>Git and GitHub, Render, Vercel, Neon, Cloudinary, cron-job.org, Brevo</p></li>
+          </ol>
+        </div>
+        <div class="stack-scene" aria-hidden="true">
+          <div class="plates" id="plates">
+            <div class="plate on" style="--i:3"><b>Browser</b><span>React · Vite</span></div>
+            <div class="plate" style="--i:2"><b>Server</b><span>Django · DRF</span></div>
+            <div class="plate" style="--i:1"><b>Data</b><span>PostgreSQL</span></div>
+            <div class="plate" style="--i:0"><b>Delivery</b><span>Render · Vercel · Neon</span></div>
           </div>
-        </article>
-      </section>
-
-      <!-- 04 DATABASE / STACK -->
-      <section class="db" id="stack" data-st="Database" data-req="SELECT * FROM stack;">
-        <p class="st mono"><b>04</b> Database / the stack</p>
-        <h2 class="h2">Query <em>my stack</em></h2>
-
-        <div class="query-bar">
-          <label class="search"><span class="mono">WHERE name LIKE</span><input id="q" type="search" placeholder="django, react, git..." autocomplete="off" spellcheck="false"></label>
-          <div class="chips" role="group" aria-label="Filter by layer">
-            <button type="button" class="fchip on" data-layer="all" aria-pressed="true" data-cursor="Filter">all</button>
-            <button type="button" class="fchip" data-layer="server" aria-pressed="false" data-cursor="Filter">server</button>
-            <button type="button" class="fchip" data-layer="browser" aria-pressed="false" data-cursor="Filter">browser</button>
-            <button type="button" class="fchip" data-layer="data" aria-pressed="false" data-cursor="Filter">data</button>
-            <button type="button" class="fchip" data-layer="delivery" aria-pressed="false" data-cursor="Filter">delivery</button>
-          </div>
         </div>
-        <p class="sql mono" id="sql" aria-live="polite">SELECT * FROM stack;</p>
+      </div>
+    </section>
 
-        <div class="table-wrap">
-          <table class="tbl">
-            <thead><tr>
-              <th scope="col"><button type="button" data-sort="id">id</button></th>
-              <th scope="col"><button type="button" data-sort="name">name</button></th>
-              <th scope="col"><button type="button" data-sort="layer">layer</button></th>
-            </tr></thead>
-            <tbody id="tbody">
-              <tr data-layer="server"><td>1</td><td>Python</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>2</td><td>Django</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>3</td><td>Django REST Framework</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>4</td><td>JWT with SimpleJWT</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>5</td><td>django-filter</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>6</td><td>Swagger with drf-spectacular</td><td><i>server</i></td></tr>
-              <tr data-layer="server"><td>7</td><td>Django test framework</td><td><i>server</i></td></tr>
-              <tr data-layer="browser"><td>8</td><td>JavaScript</td><td><i>browser</i></td></tr>
-              <tr data-layer="browser"><td>9</td><td>React</td><td><i>browser</i></td></tr>
-              <tr data-layer="browser"><td>10</td><td>React Router</td><td><i>browser</i></td></tr>
-              <tr data-layer="browser"><td>11</td><td>Axios</td><td><i>browser</i></td></tr>
-              <tr data-layer="browser"><td>12</td><td>Vite</td><td><i>browser</i></td></tr>
-              <tr data-layer="browser"><td>13</td><td>HTML and CSS</td><td><i>browser</i></td></tr>
-              <tr data-layer="data"><td>14</td><td>PostgreSQL</td><td><i>data</i></td></tr>
-              <tr data-layer="data"><td>15</td><td>SQL and SQLite</td><td><i>data</i></td></tr>
-              <tr data-layer="delivery"><td>16</td><td>Git and GitHub</td><td><i>delivery</i></td></tr>
-              <tr data-layer="delivery"><td>17</td><td>Render and Vercel</td><td><i>delivery</i></td></tr>
-              <tr data-layer="delivery"><td>18</td><td>Cloudinary</td><td><i>delivery</i></td></tr>
-            </tbody>
-          </table>
-          <p class="empty mono" id="empty" hidden>0 rows. Nothing matches that query.</p>
-        </div>
-        <p class="rows mono" id="rows">18 rows</p>
-      </section>
-
-      <!-- 05 RESPONSE / CONTACT -->
-      <section class="resp" id="contact" data-st="Response" data-req="200 OK">
-        <p class="st mono"><b>05</b> Response / say hello</p>
-        <h2 class="ok" aria-label="200 OK"><span class="ok-num">200</span><span class="ok-txt">OK</span></h2>
-        <a class="mail" href="mailto:mohanrajtunes@gmail.com" data-cursor="Email">mohanrajtunes@<wbr>gmail.com</a>
-        <div class="links">
-          <button class="btn solid" id="copy" type="button" data-cursor="Copy">Copy email</button>
-          <a class="btn ghost" href="https://github.com/mohanrajtunes" target="_blank" rel="noopener noreferrer" data-cursor="Open">GitHub profile</a>
-          <a class="btn ghost" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor="Open">ShopFlow live</a>
-        </div>
-        <dl class="headers mono">
-          <div><dt>content-type</dt><dd>developer/full-stack</dd></div>
-          <div><dt>location</dt><dd>Puducherry, India</dd></div>
-          <div><dt>connection</dt><dd>open to work</dd></div>
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <h2 class="h2 split" id="about-title">About me.</h2>
+      <div class="about-grid">
+        <p class="statement">I'm a Computer Science graduate who builds web apps end to end. I care most about what users never see: permissions, money, stock, and knowing when something breaks.</p>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Puducherry, India</dd></div>
+          <div><dt>Education</dt><dd>B.Tech, Computer Science and Engineering, Sri Manakula Vinayagar Engineering College</dd></div>
+          <div><dt>Looking for</dt><dd>Backend and full stack developer roles</dd></div>
+          <div><dt>Status</dt><dd><span class="dot on"></span>Available now</dd></div>
         </dl>
-      </section>
+      </div>
+    </section>
 
-    </main>
-  </div>
+    <!-- CONTACT -->
+    <div class="contact-band">
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <h2 class="big h2-plain split" id="contact-title">Let's build something.</h2>
+      <p class="contact-lead">The fastest way to reach me is email. I reply within a day.</p>
+      <a class="mail" href="mailto:mohanrajtunes@gmail.com">mohanrajtunes@<wbr>gmail.com</a>
+      <div class="c-links">
+        <button class="btn solid mag" id="copy" type="button">Copy email</button>
+        <a class="btn line mag" href="https://github.com/mohanrajtunes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn line mag resume-link" href="resume.pdf" download>Resume</a>
+      </div>
+    </section>
+    </div>
+  </main>
 
   <footer class="foot">
-    <p>&copy; 2026 Mohanraj S.</p>
-    <a href="#top" data-cursor="Top">Back to top ↑</a>
+    <p class="foot-name" aria-label="Build. Ship. Watch."><span class="fw">Build.</span> <span class="fw">Ship.</span> <span class="fw">Watch<i>.</i></span></p>
+    <div class="foot-row">
+      <p>© 2026 Mohanraj S</p>
+      <a href="#top">Back to top</a>
+    </div>
   </footer>
 
-  <div class="pal" id="pal" role="dialog" aria-modal="true" aria-label="Jump to" hidden>
+  <div class="pal" id="pal" role="dialog" aria-modal="true" aria-label="Jump menu" hidden>
     <div class="pal-box">
-      <input id="pal-in" type="text" placeholder="Jump to..." autocomplete="off" spellcheck="false" aria-label="Search actions">
-      <ul id="pal-list" role="listbox"></ul>
-      <p class="mono">Up and down to move, Enter to go, Esc to close</p>
+      <input id="pal-in" type="text" placeholder="Where to?" autocomplete="off" spellcheck="false" aria-label="Search the jump menu">
+      <ul id="pal-list" role="listbox" aria-label="Actions"></ul>
+      <p class="pal-help">Arrows to move · Enter to go · Esc to close</p>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
