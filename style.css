@@ -5,10 +5,10 @@ body{font-family:var(--f);font-size:17px;line-height:1.55;color:var(--ink);backg
 a{color:inherit}
 :focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:8px}
 .skip{position:absolute;left:12px;top:-60px;z-index:99;background:#fff;color:var(--navy);padding:8px 14px;border-radius:8px}.skip:focus{top:12px}
-#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:-2;display:block;background:#040A1F url(liquid.jpg) center/cover}
+#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:-2;display:block;image-rendering:auto;background:#040A1F url(liquid.jpg) center/cover}
 
 /* glass */
-.glass{background:linear-gradient(150deg,rgba(150,190,255,.16),rgba(255,255,255,.04) 40%,rgba(4,10,40,.3));backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 0 1px rgba(255,255,255,.18),0 24px 60px -24px rgba(8,16,87,.55)}
+.glass{background:linear-gradient(150deg,rgba(150,190,255,.16),rgba(255,255,255,.04) 40%,rgba(4,10,40,.3));backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 0 1px rgba(255,255,255,.18),0 24px 60px -24px rgba(8,16,87,.55)}
 .card-g{position:relative;overflow:hidden;border-radius:28px}
 .card-g::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--x,50%) var(--y,0%),rgba(255,255,255,.22),transparent 45%)}
 .card-g:hover::after{opacity:1}
@@ -195,3 +195,7 @@ a{color:inherit}
 /* keep the j descender visible inside the word mask */
 .name .w{padding-bottom:.26em;margin-bottom:-.26em;padding-right:.04em}
 .name .w>span{padding-bottom:.26em;margin-bottom:-.26em}
+
+/* phones: drop live blur behind cards (costly over a moving background) */
+@media (max-width:720px){.glass,.card-g{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(150deg,rgba(40,70,150,.55),rgba(10,22,70,.72))}}
+.pill{font-weight:500}

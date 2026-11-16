@@ -27,7 +27,7 @@ if(gl){try{
   ' vec2 d2=vec2(fbm(q*1.7+d*3.+tt*.6),fbm(q*1.7-d*3.+9.1-tt*.5))-.5;',
   ' c+=d*(.07+STIR*.06)+d2*(.035+STIR*.04);',
   ' vec3 col=texture2D(IMG,c).rgb;',
-  ' float g=pow(fbm(c*9.+T*.15),3.);',
+  ' float g=pow(n(c*14.+T*.2),4.);',
   ' col+=vec3(.3,.55,1.)*g*.55;',
   ' return col;}',
   'void main(){',
@@ -41,7 +41,6 @@ if(gl){try{
   ' vec3 col=img(sz);',
   ' col*=1.+.18*k*min(abs(SW),1.);',
   ' vec2 v=gl_FragCoord.xy/R-.5; col*=1.-.35*dot(v,v);',
-  ' col+=(h(gl_FragCoord.xy+fract(T*7.)*31.)-.5)*.03;',
   ' gl_FragColor=vec4(col,1.);}'
   ].join('\n');
   function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))throw gl.getShaderInfoLog(o);return o}
@@ -57,10 +56,13 @@ if(gl){try{
   im.src='liquid.jpg';
   gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
   var dpr=1,W=0,H=0;
-  function size(){dpr=Math.min(devicePixelRatio||1,innerWidth<700?1.5:1.75);var w=Math.round(innerWidth*dpr),h=Math.round(innerHeight*dpr);if(w!==W||h!==H){W=w;H=h;canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}}
+  function size(){dpr=innerWidth<700?.5:.6;var w=Math.round(innerWidth*dpr),h=Math.round(innerHeight*dpr);if(w!==W||h!==H){W=w;H=h;canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}}
   size();addEventListener('resize',size);
   var sc=0,t0=performance.now(),stir=0,sw=0,lastS=scrollY,lastM={x:mouse.x,y:mouse.y};
+  var lastF=0;
   function frame(now){
+    if(!reduce)requestAnimationFrame(frame);
+    if(d.hidden||now-lastF<32)return;lastF=now;
     var t=(now-t0)/1000,target=scrollY/innerHeight;
     sc+=(target-sc)*(reduce?1:.06);
     var ds=Math.abs(scrollY-lastS);lastS=scrollY;stir+=(Math.min(ds/60,1.5)-stir)*.06;
@@ -69,7 +71,6 @@ if(gl){try{
     gl.uniform2f(U.R,W,H);gl.uniform1i(U.IMG,0);gl.uniform2f(U.IS,isz[0],isz[1]);gl.uniform1f(U.T,reduce?4:t);gl.uniform1f(U.S,sc);gl.uniform1f(U.DPR,dpr);
     gl.uniform2f(U.M,lens.x*dpr,(innerHeight-lens.y)*dpr);gl.uniform1f(U.LR,0.);gl.uniform1f(U.STIR,stir);gl.uniform1f(U.SW,0.);
     gl.drawArrays(gl.TRIANGLES,0,3);
-    if(!reduce)requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
   if(reduce)addEventListener('scroll',function(){requestAnimationFrame(frame)},{passive:true});
@@ -129,7 +130,7 @@ addEventListener('scroll',function(){var mid=innerHeight*.4,cur=-1;secs.forEach(
   function ease(t){t=Math.min(1,Math.max(0,t));return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
   function edges(){var E=[];G.forEach(function(g){var L=N.filter(function(n){return n.g===g});for(var j=1;j<L.length;j++){E.push([L[j-1],L[j]]);if(j>1&&j%2===0)E.push([L[0],L[j]])}});return E}
   var EG=edges();
-  function seg(a,b,t,alpha,wid,glow){if(t<=0)return;var x=a.x+(b.x-a.x)*t,y=a.y+(b.y-a.y)*t;ctx.strokeStyle='rgba(170,205,255,'+alpha+')';ctx.lineWidth=wid;ctx.shadowBlur=glow;ctx.shadowColor='rgba(120,180,255,.9)';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(x,y);ctx.stroke()}
+  function seg(a,b,t,alpha,wid,glow){if(t<=0)return;var x=a.x+(b.x-a.x)*t,y=a.y+(b.y-a.y)*t;if(glow){ctx.strokeStyle='rgba(120,180,255,.22)';ctx.lineWidth=wid*5;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(x,y);ctx.stroke()}ctx.strokeStyle='rgba(170,205,255,'+alpha+')';ctx.lineWidth=wid;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(x,y);ctx.stroke()}
   var lastPrj=-2,lastCap='';
   function setCap(t,s){var k=t+s;if(k===lastCap)return;lastCap=k;capT.textContent=t;capS.textContent=s;cap.classList.remove('swap');void cap.offsetWidth;cap.classList.add('swap')}
   function show(n){sel=n;stars.forEach(function(el){el.classList.toggle('sel',!!n&&el===n.el)});used.classList.toggle('on',!!n);
@@ -137,7 +138,9 @@ addEventListener('scroll',function(){var mid=innerHeight*.4,cur=-1;secs.forEach(
   stars.forEach(function(el,i){el.addEventListener('click',function(){show(sel===N[i]?null:N[i])})});
   pjs.forEach(function(b,k){b.addEventListener('click',function(){var r=sec.getBoundingClientRect(),span=sec.offsetHeight-innerHeight,target=.5+(k+.5)*.125;
     scrollTo({top:scrollY+r.top+span*target,behavior:reduce?'auto':'smooth'})})});
+  var vis=true;new IntersectionObserver(function(es){var was=vis;vis=es[0].isIntersecting;if(vis&&!was&&!reduce)requestAnimationFrame(frame)}).observe(sec);
   function frame(now){
+    if(!vis)return;
     var t=now/1000,p=reduce?.5:prog();
     var form=ease(p/.22),link=Math.min(1,Math.max(0,(p-.22)/.24)),pi=p>=.5?Math.min(3,Math.floor((p-.5)/.125)):-1,pt=p>=.5?((p-.5)/.125)-pi:0;
     if(pick!==null)pi=pick;
@@ -151,10 +154,9 @@ addEventListener('scroll',function(){var mid=innerHeight*.4,cur=-1;secs.forEach(
       L.sort(function(a,b){return Math.atan2(a.y-cy,a.x-cx)-Math.atan2(b.y-cy,b.x-cx)});
       var drawn=pick!==null?1:Math.min(1,pt*2.2);
       for(var j=0;j<L.length;j++){var a=L[j],b=L[(j+1)%L.length],f=Math.min(1,Math.max(0,drawn*L.length-j));seg(a,b,f,.85,1.6,12)}
-      ctx.shadowBlur=0;
       N.forEach(function(n){var on=n.u.indexOf(prj)>-1;n.el.classList.toggle('lit',on);n.el.classList.toggle('dim',!on)});
       setCap(prj+' uses '+L.length+' of these',LINE[prj]);
-    }else{N.forEach(function(n){n.el.classList.remove('lit','dim')});ctx.shadowBlur=0;
+    }else{N.forEach(function(n){n.el.classList.remove('lit','dim')});
       setCap(link>.95?'All connected':'Every skill I use',link>.95?'Keep scrolling to see each project':'Scroll to connect them');}
     pjs.forEach(function(b,k){b.classList.toggle('on',k===pi)});
     /* twinkle dots on canvas */
@@ -168,8 +170,9 @@ addEventListener('scroll',function(){var mid=innerHeight*.4,cur=-1;secs.forEach(
 
 /* ---------- live previews: load iframes when near ---------- */
 if('IntersectionObserver' in window){
-  var pio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var f=e.target;f.addEventListener('load',function(){f.classList.add('ok')});f.src=f.dataset.src;pio.unobserve(f)})},{rootMargin:'300px'});
-  $$('.prev iframe').forEach(function(f){pio.observe(f)});
+  var pio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var f=e.target;f.addEventListener('load',function(){f.classList.add('ok')});f.src=f.dataset.src;pio.unobserve(f)})},{rootMargin:'100px'});
+  var save=(navigator.connection&&navigator.connection.saveData)||innerWidth<720;
+  $$('.prev iframe').forEach(function(f){if(save){var ph=f.parentNode.querySelector('.ph small');if(ph)ph.textContent='Tap to open the live app';f.remove()}else pio.observe(f)});
 }
 
 /* ---------- copy email ---------- */
