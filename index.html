@@ -1,260 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohanraj S | Full Stack Developer</title>
-  <meta name="description" content="Mohanraj S is a full stack developer in Puducherry, India, building with Django REST Framework, PostgreSQL and React. Two products live in production: ShopFlow and PingBoard.">
-  <meta property="og:title" content="Mohanraj S | Full Stack Developer">
-  <meta property="og:description" content="Django REST Framework, PostgreSQL and React. ShopFlow, a multi-vendor store, and PingBoard, an uptime monitor, both live.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0B0B0C">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230B0B0C'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-style='italic' text-anchor='middle' fill='%23C8A96A'%3EM%3C/text%3E%3C/svg%3E">
-  <script>
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem('ms-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      document.documentElement.dataset.theme = t;
-      document.documentElement.classList.add('js');
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.documentElement.classList.add('motion');
-        setTimeout(function () { if (!window.__msReady) document.documentElement.classList.remove('motion'); }, 4000);
-      }
-    })();
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohanraj S | AI & Full Stack Developer</title>
+<meta name="description" content="Mohanraj S is an AI and full stack developer from Puducherry, India. He builds LLM apps and web products with Python, Django and React.">
+<meta property="og:title" content="Mohanraj S | AI & Full Stack Developer">
+<meta property="og:description" content="AI apps and the web products around them. All of it live.">
+<meta name="theme-color" content="#040A1F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231179DC'/%3E%3Ctext x='32' y='41' font-family='Arial' font-size='24' text-anchor='middle' fill='%23fff'%3EMS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#work">Skip to work</a>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="progress" id="progress" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<a class="skip" href="#about">Skip to content</a>
+<header class="nav" id="nav">
+  <a class="brand" href="#top">Mohanraj S</a>
+  <nav class="links glass" id="links" aria-label="Main"><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></nav>
+  <a class="pill" href="#contact">Let's talk</a>
+  <button class="burger glass" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span></button>
+</header>
 
-  <header class="nav" id="nav">
-    <div class="nav-in glass">
-      <a class="brand" href="#top" aria-label="Mohanraj S, back to top">Mohanraj<span> S</span></a>
-      <nav class="nav-links" aria-label="Sections">
-        <a href="#work">Work</a>
-        <a href="#stack">Stack</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-act">
-        <button class="kbtn" id="kbtn" type="button" aria-haspopup="dialog" aria-label="Open the jump menu">Jump <kbd>Ctrl K</kbd></button>
-        <button class="mode" id="mode" type="button" aria-label="Switch to light mode">
-          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
-          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 14.6A8.4 8.4 0 0 1 9.4 3.8a8.4 8.4 0 1 0 10.8 10.8Z"/></svg>
-        </button>
-        <a class="btn small solid resume-link mag" href="resume.pdf" download>Resume</a>
-      </div>
+<main id="top">
+<section class="hero">
+  <p class="meta tl"><span class="live"></span>Open to work</p>
+  <p class="vert">AI &amp; Full Stack<br>Developer</p>
+  <div class="hero-in">
+    <h1 class="name sheen" data-split>Mohanraj S</h1>
+    <p class="lede" data-in>I build AI apps that actually ship, and the web products around them.</p>
+    <div class="cta" data-in><a class="btn solid" href="#work">See my work</a><a class="btn glass" href="resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+  </div>
+  <p class="meta br">Scroll</p>
+</section>
+
+<section class="sec" id="about">
+  <header class="head"><p class="idx">About</p><h2 data-split>What I bring</h2></header>
+  <div class="about glass card-g" data-in>
+    <p class="story">I learn by building real things and putting them online. I care about the parts people never see: who is allowed to do what, data that stays correct when two things happen at once, and knowing the moment something breaks.</p>
+    <dl class="facts">
+      <div><dt>Education</dt><dd>B.Tech, Computer Science and Engineering<small>Sri Manakula Vinayagar Engineering College, 2021 to 2025</small></dd></div>
+      <div><dt>Languages</dt><dd>English, Tamil</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <header class="head"><p class="idx">Work</p><h2 data-split>Selected projects</h2></header>
+  <div class="grid">
+    <article class="proj glass card-g" data-in>
+      <a class="prev" href="https://sift-swart-psi.vercel.app" target="_blank" rel="noopener" aria-label="Open Sift live">
+        <span class="bar"><i></i><i></i><i></i><em>sift-swart-psi.vercel.app</em></span>
+        <span class="screen"><span class="ph">Sift<small>Loading live preview…</small></span><iframe data-src="https://sift-swart-psi.vercel.app" title="Sift live preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span>
+        <span class="open">Open live ↗</span>
+      </a>
+      <div class="p-top"><h3>Sift</h3><span class="tag">AI search + agent</span></div>
+      <p class="p-txt">Ask questions about any GitHub repository and get answers with exact file and line references.</p>
+      <ul class="stack"><li>Python</li><li>Django REST</li><li>pgvector</li><li>Gemini</li><li>Groq</li><li>React</li></ul>
+      <div class="cta"><a class="btn solid sm" href="https://sift-swart-psi.vercel.app" target="_blank" rel="noopener">Open live</a><a class="btn glass sm" href="https://github.com/mohanrajtunes/sift" target="_blank" rel="noopener">Code</a></div>
+    </article>
+    <article class="proj glass card-g" data-in>
+      <a class="prev" href="https://hirelens-seven-smoky.vercel.app" target="_blank" rel="noopener" aria-label="Open HireLens live">
+        <span class="bar"><i></i><i></i><i></i><em>hirelens-seven-smoky.vercel.app</em></span>
+        <span class="screen"><span class="ph">HireLens<small>Loading live preview…</small></span><iframe data-src="https://hirelens-seven-smoky.vercel.app" title="HireLens live preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span>
+        <span class="open">Open live ↗</span>
+      </a>
+      <div class="p-top"><h3>HireLens</h3><span class="tag">AI app</span></div>
+      <p class="p-txt">Compares a resume with a job post and returns a match score, missing skills and a cover note.</p>
+      <ul class="stack"><li>Python</li><li>Django REST</li><li>Groq LLM</li><li>PostgreSQL</li><li>React</li></ul>
+      <div class="cta"><a class="btn solid sm" href="https://hirelens-seven-smoky.vercel.app" target="_blank" rel="noopener">Open live</a><a class="btn glass sm" href="https://github.com/mohanrajtunes/hirelens" target="_blank" rel="noopener">Code</a></div>
+    </article>
+    <article class="proj glass card-g" data-in>
+      <a class="prev" href="https://pingboard-frontend.vercel.app" target="_blank" rel="noopener" aria-label="Open PingBoard live">
+        <span class="bar"><i></i><i></i><i></i><em>pingboard-frontend.vercel.app</em></span>
+        <span class="screen"><span class="ph">PingBoard<small>Loading live preview…</small></span><iframe data-src="https://pingboard-frontend.vercel.app" title="PingBoard live preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span>
+        <span class="open">Open live ↗</span>
+      </a>
+      <div class="p-top"><h3>PingBoard</h3><span class="tag">Monitoring</span></div>
+      <p class="p-txt">Monitors websites every minute and sends an email alert when one goes down.</p>
+      <ul class="stack"><li>Python</li><li>Django REST</li><li>PostgreSQL</li><li>Docker</li></ul>
+      <div class="cta"><a class="btn solid sm" href="https://pingboard-frontend.vercel.app" target="_blank" rel="noopener">Open live</a><a class="btn glass sm" href="https://github.com/mohanrajtunes/Pingboard-backend" target="_blank" rel="noopener">Code</a></div>
+    </article>
+    <article class="proj glass card-g" data-in>
+      <a class="prev" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener" aria-label="Open ShopFlow live">
+        <span class="bar"><i></i><i></i><i></i><em>shopflow-frontend-alpha.vercel.app</em></span>
+        <span class="screen"><span class="ph">ShopFlow<small>Loading live preview…</small></span><iframe data-src="https://shopflow-frontend-alpha.vercel.app" title="ShopFlow live preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span>
+        <span class="open">Open live ↗</span>
+      </a>
+      <div class="p-top"><h3>ShopFlow</h3><span class="tag">Online store</span></div>
+      <p class="p-txt">Multi-vendor store with role-based access and checkout that never oversells stock.</p>
+      <ul class="stack"><li>Python</li><li>Django REST</li><li>JWT</li><li>PostgreSQL</li><li>React</li></ul>
+      <div class="cta"><a class="btn solid sm" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener">Open live</a><a class="btn glass sm" href="https://github.com/mohanrajtunes/shopflow-backend" target="_blank" rel="noopener">Code</a></div>
+    </article>
+  </div>
+</section>
+
+
+<section class="sky-sec" id="skills">
+  <div class="stage" id="stage">
+    <header class="head"><p class="idx">Skills</p><h2 data-split>Tech stack</h2></header>
+    <div class="cap" id="cap" aria-live="polite"><b id="cap-t">Every skill I use</b><span id="cap-s">Scroll to connect them</span></div>
+    <div class="field" id="field">
+      <canvas id="stars" aria-hidden="true"></canvas>
+      <p class="glabel" data-g="ai">AI</p>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>RAG</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>Hybrid search</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>AI agents</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>pgvector</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>Gemini</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift, HireLens"><i></i><span>Groq</span></button>
+      <button class="star" type="button" data-g="ai" data-u="Sift"><i></i><span>Answer tests</span></button>
+      <p class="glabel" data-g="be">Backend</p>
+      <button class="star" type="button" data-g="be" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Python</span></button>
+      <button class="star" type="button" data-g="be" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Django</span></button>
+      <button class="star" type="button" data-g="be" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Django REST</span></button>
+      <button class="star" type="button" data-g="be" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>PostgreSQL</span></button>
+      <button class="star" type="button" data-g="be" data-u="ShopFlow"><i></i><span>JWT logins</span></button>
+      <button class="star" type="button" data-g="be" data-u="ShopFlow"><i></i><span>Row locks</span></button>
+      <button class="star" type="button" data-g="be" data-u="PingBoard"><i></i><span>Scheduled jobs</span></button>
+      <p class="glabel" data-g="fe">Frontend</p>
+      <button class="star" type="button" data-g="fe" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>React</span></button>
+      <button class="star" type="button" data-g="fe" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>JavaScript</span></button>
+      <button class="star" type="button" data-g="fe" data-u="Sift"><i></i><span>Vite</span></button>
+      <button class="star" type="button" data-g="fe" data-u="Sift"><i></i><span>GSAP</span></button>
+      <button class="star" type="button" data-g="fe" data-u="Sift"><i></i><span>Live streaming</span></button>
+      <p class="glabel" data-g="sh">Shipping</p>
+      <button class="star" type="button" data-g="sh" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Git</span></button>
+      <button class="star" type="button" data-g="sh" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Vercel</span></button>
+      <button class="star" type="button" data-g="sh" data-u="Sift, PingBoard"><i></i><span>Render</span></button>
+      <button class="star" type="button" data-g="sh" data-u="Sift"><i></i><span>Neon</span></button>
+      <button class="star" type="button" data-g="sh" data-u="PingBoard"><i></i><span>Docker</span></button>
+      <button class="star" type="button" data-g="sh" data-u="Sift, HireLens, PingBoard, ShopFlow"><i></i><span>Postman</span></button>
     </div>
-  </header>
-
-  <main id="top">
-
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 class="name" id="hero-title"><span class="ln"><span class="nw">Mohanraj</span></span> <span class="ln"><span class="nw">S<i>.</i></span></span></h1>
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="lead rv">Full stack developer. I build Django REST APIs, model data in PostgreSQL and design React interfaces, then ship them to production and keep them up.</p>
-          <div class="hero-actions rv">
-            <a class="btn solid mag" href="#work">See the work</a>
-            <a class="btn line mag resume-link" href="resume.pdf" download>Download resume</a>
-          </div>
-          <p class="hero-place rv"><span class="dot on"></span>Open to work · Puducherry, India · <span id="localtime">India time</span></p>
-        </div>
-
-        <aside class="status glass rv" id="status" aria-label="Live status of my projects" data-ui>
-          <div class="status-head">
-            <p class="status-title"><span class="pulse"></span>Live right now</p>
-            <p class="status-src">Watched by PingBoard</p>
-          </div>
-          <ul class="status-list" id="status-list">
-            <li data-name="ShopFlow"><span class="s-dot"></span><b>ShopFlow</b><span class="s-state">Checking</span><span class="s-up">…</span></li>
-            <li data-name="PingBoard"><span class="s-dot"></span><b>PingBoard</b><span class="s-state">Checking</span><span class="s-up">…</span></li>
-          </ul>
-          <p class="status-foot" id="status-foot">Asking the monitor. The free server can take a moment to wake up.</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section class="work" id="work" aria-labelledby="work-title">
-      <div class="gallery" id="gallery">
-        <div class="track" id="track">
-
-          <div class="panel panel-intro">
-            <h2 class="h2 split" id="work-title">Two products, both live.</h2>
-            <p class="intro-copy">Both are full stack: a Django REST API, a PostgreSQL database and a React front end, deployed on free cloud tiers and used for real. Try the demo beside each one.</p>
-            <p class="intro-hint" aria-hidden="true">Keep scrolling <span>→</span></p>
-          </div>
-
-          <!-- ShopFlow -->
-          <article class="panel project" id="shopflow" aria-labelledby="sf-title">
-            <div class="p-info">
-              <h3 class="p-title" id="sf-title">ShopFlow</h3>
-              <p class="p-lead">A live multi-vendor store where the last item can only be sold once.</p>
-              <ul class="p-points">
-                <li>Checkout is one database transaction that locks each product row.</li>
-                <li>Vendors can edit only their own products. The API enforces it, not just the UI.</li>
-                <li>JWT login with refresh tokens; the user's role travels in the token.</li>
-                <li>Vendors upload product photos to Cloudinary.</li>
-              </ul>
-              <p class="p-stack">React on Vercel · Django on Render · PostgreSQL on Neon</p>
-              <div class="p-links">
-                <a class="btn solid mag" href="https://shopflow-frontend-alpha.vercel.app" target="_blank" rel="noopener noreferrer">Open live app</a>
-                <a class="btn line" href="https://github.com/mohanrajtunes/Shopflow-frontend" target="_blank" rel="noopener noreferrer">Frontend code</a>
-                <a class="btn line" href="https://github.com/mohanrajtunes/shopflow-backend" target="_blank" rel="noopener noreferrer">Backend code</a>
-              </div>
-            </div>
-
-            <button class="btn line demo-open" type="button" aria-controls="sim" aria-expanded="false">Try the checkout demo</button>
-            <div class="demo glass" id="sim" data-ui>
-              <div class="demo-bar"><i></i><i></i><i></i><span>POST /api/checkout/</span></div>
-              <div class="demo-body">
-                <div class="demo-head">
-                  <p class="demo-q">Two buyers, one item left</p>
-                  <label class="switch">
-                    <input type="checkbox" id="lock" checked>
-                    <span class="sw" aria-hidden="true"></span>
-                    <span id="lock-lbl">Row lock on</span>
-                  </label>
-                </div>
-                <div class="sim-stage">
-                  <div class="buyer" id="buyer-a"><b>Buyer A</b><span id="a-res">waiting</span></div>
-                  <div class="stock"><span>In stock</span><b id="stock">1</b></div>
-                  <div class="buyer" id="buyer-b"><b>Buyer B</b><span id="b-res">waiting</span></div>
-                </div>
-                <button class="btn solid wide" id="fire" type="button">Both press Buy at the same moment</button>
-                <p class="note" id="sim-note"></p>
-                <p class="fine">A simulation. The real checkout uses select_for_update() inside transaction.atomic().</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- PingBoard -->
-          <article class="panel project" id="pingboard" aria-labelledby="pb-title">
-            <div class="p-info">
-              <h3 class="p-title" id="pb-title">PingBoard</h3>
-              <p class="p-lead">A live uptime monitor that checks your sites every minute and emails you when one goes down.</p>
-              <ul class="p-points">
-                <li>A scheduler calls a secret-protected tick endpoint every minute; each due monitor gets a real HTTP check.</li>
-                <li>Two failures in a row open an incident, so one network blip never sends a false alarm.</li>
-                <li>Alerts go out through Brevo's HTTPS API, because the free host blocks SMTP ports.</li>
-                <li>It is watching ShopFlow and itself right now. That's the status card at the top of this page.</li>
-              </ul>
-              <p class="p-stack">React on Vercel · Django on Render · PostgreSQL on Neon · cron-job.org</p>
-              <div class="p-links">
-                <a class="btn solid mag" href="https://pingboard-frontend.vercel.app" target="_blank" rel="noopener noreferrer">Open live app</a>
-                <a class="btn line" href="https://github.com/mohanrajtunes/Pingboard-frontend" target="_blank" rel="noopener noreferrer">Frontend code</a>
-                <a class="btn line" href="https://github.com/mohanrajtunes/Pingboard-backend" target="_blank" rel="noopener noreferrer">Backend code</a>
-              </div>
-            </div>
-
-            <button class="btn line demo-open" type="button" aria-controls="mon" aria-expanded="false">Try the monitor demo</button>
-            <div class="demo glass" id="mon" data-ui>
-              <div class="demo-bar"><i></i><i></i><i></i><span>POST /api/internal/tick/</span></div>
-              <div class="demo-body">
-                <div class="demo-head">
-                  <p class="demo-q">Take the site down</p>
-                  <label class="switch">
-                    <input type="checkbox" id="site-up" checked>
-                    <span class="sw" aria-hidden="true"></span>
-                    <span id="site-lbl">Site up</span>
-                  </label>
-                </div>
-                <div class="mon-top"><span>example.com</span><span class="pill up" id="mon-pill">Up</span></div>
-                <div class="beats" id="beats" aria-hidden="true"></div>
-                <ol class="log" id="mon-log" aria-live="polite"></ol>
-                <button class="btn solid wide" id="tick" type="button">Run the next check</button>
-                <p class="note" id="mon-note"></p>
-                <p class="fine">A simulation. The real checker stores every check in PostgreSQL and opens incidents on the server.</p>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- STACK: a literal stack of layers -->
-    <section class="stack" id="stack" aria-labelledby="stack-title">
-      <div class="stack-pin" id="stack-pin">
-        <div class="stack-copy">
-          <h2 class="h2 split" id="stack-title">The stack.</h2>
-          <p class="stack-sub">Four layers, one request. Every project on this page runs through all of them.</p>
-          <ol class="layers">
-            <li class="lay on" data-i="0"><h3>Browser</h3><p>JavaScript, React, React Router, Axios, Vite, GSAP, HTML and CSS</p></li>
-            <li class="lay" data-i="1"><h3>Server</h3><p>Python, Django, Django REST Framework, SimpleJWT, Celery, django-filter, drf-spectacular, pytest</p></li>
-            <li class="lay" data-i="2"><h3>Data</h3><p>PostgreSQL, SQL, SQLite</p></li>
-            <li class="lay" data-i="3"><h3>Delivery</h3><p>Git and GitHub, Render, Vercel, Neon, Cloudinary, cron-job.org, Brevo</p></li>
-          </ol>
-        </div>
-        <div class="stack-scene" aria-hidden="true">
-          <div class="plates" id="plates">
-            <div class="plate on" style="--i:3"><b>Browser</b><span>React · Vite</span></div>
-            <div class="plate" style="--i:2"><b>Server</b><span>Django · DRF</span></div>
-            <div class="plate" style="--i:1"><b>Data</b><span>PostgreSQL</span></div>
-            <div class="plate" style="--i:0"><b>Delivery</b><span>Render · Vercel · Neon</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about" aria-labelledby="about-title">
-      <h2 class="h2 split" id="about-title">About me.</h2>
-      <div class="about-grid">
-        <p class="statement">I'm a Computer Science graduate who builds web apps end to end. I care most about what users never see: permissions, money, stock, and knowing when something breaks.</p>
-        <dl class="facts">
-          <div><dt>Based in</dt><dd>Puducherry, India</dd></div>
-          <div><dt>Education</dt><dd>B.Tech, Computer Science and Engineering, Sri Manakula Vinayagar Engineering College</dd></div>
-          <div><dt>Looking for</dt><dd>Backend and full stack developer roles</dd></div>
-          <div><dt>Status</dt><dd><span class="dot on"></span>Available now</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <div class="contact-band">
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <h2 class="big h2-plain split" id="contact-title">Let's build something.</h2>
-      <p class="contact-lead">The fastest way to reach me is email. I reply within a day.</p>
-      <a class="mail" href="mailto:mohanrajtunes@gmail.com">mohanrajtunes@<wbr>gmail.com</a>
-      <div class="c-links">
-        <button class="btn solid mag" id="copy" type="button">Copy email</button>
-        <a class="btn line mag" href="https://github.com/mohanrajtunes" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="btn line mag resume-link" href="resume.pdf" download>Resume</a>
-      </div>
-    </section>
-    </div>
-  </main>
-
-  <footer class="foot">
-    <p class="foot-name" aria-label="Build. Ship. Watch."><span class="fw">Build.</span> <span class="fw">Ship.</span> <span class="fw">Watch<i>.</i></span></p>
-    <div class="foot-row">
-      <p>© 2026 Mohanraj S</p>
-      <a href="#top">Back to top</a>
-    </div>
-  </footer>
-
-  <div class="pal" id="pal" role="dialog" aria-modal="true" aria-label="Jump menu" hidden>
-    <div class="pal-box">
-      <input id="pal-in" type="text" placeholder="Where to?" autocomplete="off" spellcheck="false" aria-label="Search the jump menu">
-      <ul id="pal-list" role="listbox" aria-label="Actions"></ul>
-      <p class="pal-help">Arrows to move · Enter to go · Esc to close</p>
+    <div class="sky-foot">
+      <div class="pjs" role="group" aria-label="Show a project's skills"><button type="button" class="pj" data-p="Sift">Sift</button><button type="button" class="pj" data-p="HireLens">HireLens</button><button type="button" class="pj" data-p="PingBoard">PingBoard</button><button type="button" class="pj" data-p="ShopFlow">ShopFlow</button></div>
+      <p class="used" id="used" aria-live="polite"></p>
     </div>
   </div>
+</section>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script src="script.js" defer></script>
+<section class="sec contact" id="contact">
+  <header class="head"><p class="idx">Contact</p><h2 data-split>Get in touch</h2></header>
+  <p class="lede" data-in>I'm open to AI engineer and full stack developer roles. Email is the quickest way to reach me.</p>
+  <a class="mail" href="mailto:mohanrajtunes@gmail.com" data-in>mohanrajtunes@gmail.com</a>
+  <div class="cta" data-in><button class="btn solid" id="copy" type="button">Copy email</button><a class="btn glass" href="https://linkedin.com/in/mohanraj-seenuvasaperumal-3795ab37b" target="_blank" rel="noopener">LinkedIn</a><a class="btn glass" href="https://github.com/mohanrajtunes" target="_blank" rel="noopener">GitHub</a><a class="btn glass" href="tel:+919042052780">+91 90420 52780</a></div>
+  <footer class="foot"><span>© 2026 Mohanraj S</span><a href="#top">Back to top</a></footer>
+</section>
+</main>
+<div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js" defer></script>
 </body>
 </html>
